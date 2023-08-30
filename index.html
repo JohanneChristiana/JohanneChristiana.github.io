@@ -1,0 +1,1271 @@
+<!-- 
+  Portfolio: BS4 Assignment
+  Author: Johanne Christiana Menez
+  Date: November 20, 2022
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+     <title>Bootstrap</title>
+ 
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta http-equiv="x-ua-compatible" content="ie=edge">
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+ 
+     <!-------------- I added my own CSS for the additional exercise; Popover -------------->
+     <link rel="stylesheet" href="css/yohan-zodiac.css">
+ </head>
+ 
+ <body data-spy="scroll" data-target="#navbar-site" data-offset="80">
+ 
+     <!--------------------------------------- STYLE --------------------------------------->
+     <style>
+         body {
+             background-image: url(./images/bg1.jpg);
+             background-repeat: repeat;
+             background-size: contain;
+         }
+ 
+         nav,
+         #footer_img {
+             background-image: url(images/head_foot.jpg);
+             background-size: cover;
+         }
+ 
+         img {
+             width: 100%;
+             height: 200px;
+             max-height: 200px;
+             border: white solid 5px;
+             box-shadow: 5px 5px rgba(0, 0, 0, 0.263);
+             margin-bottom: 15px;
+         }
+ 
+         .jumbo-image {
+             width: 100%;
+             height: 200px;
+             max-height: 200px;
+         }
+ 
+         #jumbo-bg {
+             background-image: url(images/bg3.jpg);
+             width: 100%;
+         }
+ 
+         .formbg {
+             display: grid;
+         }
+ 
+         .bg-text {
+             border: rgb(26, 25, 25) solid 2px;
+             border-radius: 2px;
+             padding: 4px;
+         }
+ 
+         .bg-text:hover {
+             background-color: rgb(26, 25, 25);
+             color: white;
+         }
+ 
+         .fieldsetstyle {
+             background-image: url(images/bg_form.jpg);
+             border: 1px solid #999;
+             border-radius: 8px;
+             box-shadow: 0 0 8px #999;
+             padding: 6px;
+         }
+ 
+         .input1 {
+             width: 300px;
+         }
+ 
+         .table1 {
+             background-image: url(images/bg_table1.jpg);
+             background-size: cover;
+         }
+ 
+         table {
+             table-layout: fixed;
+         }
+ 
+         td,
+         tr,
+         th {
+             overflow: hidden;
+             text-overflow: ellipsis;
+             word-wrap: break-word;
+         }
+ 
+         #changeheight {
+             height: 600px;
+             max-height: 600px;
+             width: 100%;
+         }
+ 
+         h1,
+         h2 {
+             font-family: 'Times New Roman', Times, serif;
+         }
+ 
+         .text-caption {
+             background: rgba(0, 0, 0, 0.619);
+             border-radius: 2px;
+             color: white;
+             width: 300px;
+         }
+ 
+         #button {
+             width: 140px;
+             padding: 9px;
+             background-color: rgb(255, 255, 255);
+             color: black;
+             border: black solid 2px;
+             margin-bottom: 10px;
+         }
+ 
+         #button:hover,
+         #button2:hover {
+             background-color: rgb(0, 0, 0);
+             color: rgb(255, 255, 255);
+             border: black solid 2px;
+         }
+ 
+         #button2 {
+             margin-bottom: 5px;
+             width: 130px;
+             padding: 5px;
+             background-color: rgb(255, 255, 255);
+             color: black;
+             border: black solid 2px;
+         }
+ 
+         #collap_content {
+             margin-top: 10px;
+             border: black solid 2px;
+             border-radius: 2px;
+             padding: 20px;
+             width: 410px;
+         }
+ 
+         .img_home {
+             box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2);
+             transition: 0.3s;
+         }
+ 
+         #logo {
+             width: 50px;
+             height: 50px;
+             max-height: unset;
+             border: unset;
+             box-shadow: unset;
+             margin-bottom: unset;
+         }
+ 
+         #media {
+             all: unset;
+             width: 300px;
+ 
+         }
+ 
+         #media_object {
+             float: left;
+             height: unset;
+             border: unset;
+             box-shadow: unset;
+             margin-bottom: unset;
+             width: 300px;
+             max-height: 100;
+         }
+ 
+         #video_size {
+             width: 340px;
+             height: 260px;
+         }
+     </style>
+     <!--------------------------------------- END STYLE --------------------------------------->
+ 
+     <!------------------------------------- START NAV BAR ------------------------------------->
+     <nav id="navbar-site" class="navbar navbar-dark bg-dark navbar-expand-sm fixed-top right">
+         <div class="container">
+             <a class="navbar-brand" href="#">
+                 <img id="logo" src="images/logo.png" alt="logo">
+             </a>
+             <a class="navbar-brand" href="#">Johanne Christiana Menez (s4675880)</a>
+             <ul class="navbar-nav">
+                 <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                 <li class="nav-item"><a class="nav-link" href="#form">Form</a></li>
+                 <li class="nav-item"><a class="nav-link" href="#tb1">Table 1</a></li>
+                 <li class="nav-item"><a class="nav-link" href="#carou">Carousel</a></li>
+                 <li class="nav-item"><a class="nav-link" href="#tb2">Table 2</a></li>
+                 <li class="nav-item"><a class="nav-link" href="#jumbo">Jumbotron</a></li>
+                 <li class="nav-item"><a class="nav-link" href="#collapsible">Collapsible</a></li>
+                 <li class="nav-item"><a class="nav-link" href="#card">Card</a></li>
+                 <!-- Additional Exercises-Dropdown list -->
+                 <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">More
+                         Exercise</a>
+                     <div class="dropdown-menu">
+                         <a class="dropdown-item" href="#modal-shape">Modal & Image Shape</a>
+                         <a class="dropdown-item" href="#vid">Adding Videos</a>
+                         <a class="dropdown-item" href="#tool">ToolTip</a>
+                         <a class="dropdown-item" href="#pop">Popover</a>
+                         <a class="dropdown-item" href="#media-obj">Media Object</a>
+                         <a class="dropdown-item" href="#footer">Footer</a>
+                     </div>
+                 </li>
+             </ul><!-- container -->
+         </div><!-- navbar-nav -->
+     </nav>
+     <!------------------------------------- END NAV BAR ------------------------------------->
+     <!-- Start of 1/Home Exercise -->
+     <div class="container mt-3" id="home">
+         <br><br><br>
+         <!-- ROW 1 -->
+         <table>
+             <tr>
+                 <td><img style="all: unset; max-width: 50px; padding: 5px;" src="gif/sun.gif" alt="sun"></td>
+                 <td>
+                     <h2>Home</h2>
+                 </td>
+             </tr>
+         </table>
+         <div class="row">
+             <section class="col">
+                 <img class="img_home" src="images/sun.jpg" alt="sunflower">
+                 <h4 class="bg-text">1. Sunflower</h4>
+                 <p><strong>Sunflowers</strong> symbolize, <em>adoration</em> thanks to the myth of Clytie and Apollo.
+                     And, because of their association with the sun, sunflowers are well-known for being a <em>happy
+                         flower and the perfect bloom</em> for a summer flower delivery to brighten someone's mood!</p>
+             </section>
+             <section class="col">
+                 <img class="img_home" src="images/rose.jpg" alt="white-rose">
+                 <h4 class="bg-text">2. White Rose</h4>
+                 <p><strong>White roses</strong> are certainly a go-to choice for weddings, and for good reason. White
+                     roses symbolize <em>loyalty, purity, and innocence.</em>
+                 </p>
+             </section>
+             <section class="col">
+                 <img class="img_home" src="images/tulip.jpg" alt="purple-tulip">
+                 <h4 class="bg-text">3. Purple Tulip</h4>
+                 <p><strong>Purple Tulips</strong> symbolize <em>royalty and elegance.</em> Because purple dye was a
+                     luxury that only royals, or the super-wealthy, could afford.</p>
+             </section>
+         </div><!-- row -->
+ 
+         <!-- ROW 2 -->
+         <div class="row">
+             <section class="col">
+                 <img class="img_home" src="images/lily.jpg" alt="water-lily">
+                 <h4 class="bg-text">4. Water Lily</h4>
+                 <p><strong>Water Lilies</strong> symbolize <em>beauty</em>, rising up from <em>humble</em> beginnings,
+                     achieving <em>great</em> things, and bringing separate things <em>together</em>.
+                 </p>
+             </section>
+             <section class="col">
+                 <img class="img_home" src="images/heart.jpg" alt="bleeding-hearts">
+                 <h4 class="bg-text">5. Bleeding Hearts</h4>
+                 <p><strong>Bleeding Hearts</strong>. These heart-shaped blooms have a strong meaning of <em>passionate
+                         love and romance</em>, which makes them gorgeous bouquet additions for Valentine's Day.</p>
+             </section>
+             <section class="col">
+                 <img class="img_home" src="images/spider.jpg" alt="spider-lily">
+                 <h4 class="bg-text">6. Red Spider Lily</h4>
+                 <p><strong>Red Spider Lily</strong> also known as <strong>Higanbana</strong> - <em>The Flower of the
+                         Dead.</em> Which is mostly known as the Flower of death Japan.</p>
+             </section>
+         </div><!-- row -->
+         <!-- End of 1/Home Exercise -->
+         <!-- ------------------------------------------------------------------------------------------------ -->
+         <!-- Start of 2/Form Exercise -->
+         <a id="form"></a>
+         <br><br><br>
+         <div class="formbg">
+             <section class="content">
+                 <h1>Form</h1>
+                 <p>The &lt;form&gt; tag is used to create an HTML form for user input. It represents a document
+                     section containing interactive controls for submitting information.</p>
+                 <ol>
+                     <li>Whenever you want to collect information from visitors you will need a form, which lives inside
+                         a
+                         &lt;form&gt;
+                         element. </li>
+                     <li>Information from a form is sent in name/value pairs.</li>
+                     <li>Each form control is given a name, and the text the user types in or the values of the options
+                         they select
+                         are sent to the server.</li>
+                     <li>HTML5 introduces new form elements which make it easier for visitors to fill in forms.</li>
+                 </ol>
+                 <form>
+                     <fieldset class="fieldsetstyle">
+                         <table cellpadding="3">
+                             <!-- Form Validation -->
+                             <legend>Form Validation</legend>
+                             <tr>
+                                 <td><label for="user">Username:</label></td>
+                                 <td><input class="input1" type="text" name="user"
+                                         placeholder="Please enter your username" required>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td><label for="pass">Password:</label></td>
+                                 <td><input class="input1" type="password" name="password"
+                                         placeholder="Please enter your password" required></td>
+                             </tr>
+                         </table>
+                     </fieldset>
+                     <br>
+                     <fieldset class="fieldsetstyle">
+                         <table cellpadding="3">
+                             <!-- Details -->
+                             <legend>Details:</legend>
+                             <tr>
+                                 <td><label for="name">Name:</label></td>
+                                 <td><input class="input1" type="text" name="name" placeholder="Johanne Christiana Menez"
+                                         required></td>
+                             </tr>
+                             <tr>
+                                 <td><label for="birth">Date of Birth:</label></td>
+                                 <td><input class="input1" type="text" name="birth" placeholder="MM/DD/YYYY" required>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td><label for="email">Email:</label></td>
+                                 <td><input class="input1" type="email" name="email"
+                                         placeholder="johanne.menez@live.vu.edu.au" required>
+                                 </td>
+                             </tr>
+                         </table>
+                     </fieldset>
+                     <br>
+                     <fieldset class="fieldsetstyle">
+                         <!-- Your Review -->
+                         <legend>Your Review:</legend>
+                         <p>
+                             <label for="hear_about">How did you hear about us?</label>
+                             <select name="referrer" id="hear_about">
+                                 <option value="google">Facebook</option>
+                                 <option value="friend">Twitter</option>
+                                 <option value="advert">Instagram</option>
+                                 <option value="other">Friend</option>
+                                 <option value="other">Other</option>
+                             </select>
+                         </p>
+                         <p>How are you today? <br>
+                         <div class="slidecontainer">
+                             <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                         </div>
+                         <p>&#128557; &#128546; &#128529; &#128512; &#128518;</p>
+                         </p>
+                         <p class="bg-text" style="width: 410px;">Would you visit again? <br>
+                             <label><input type="radio" name="option" value="Yes">Yes</label>
+                             <label></label><input type="radio" name="option" value="No">No</label>
+                             <label></label><input type="radio" name="option" value="Maybe">Maybe</label>
+                         </p>
+                         <p>
+                             <label>Tell us your thoughts on this website:</label> <br>
+                             <textarea name="comments" id="comments" cols="53" rows="5"></textarea>
+                         </p>
+                         <label><input type="checkbox" name="subscribe" checked></label>Do you like this website?<br>
+                         <input type="submit" value="Submit review">
+                     </fieldset>
+                 </form>
+             </section>
+         </div>
+         <!-- End  of 2/Form Exercise -->
+         <!-- ------------------------------------------------------------------------------------------------ -->
+         <!-- Start of 3/Table 1 Exercise -->
+         <a id="tb1"></a>
+         <br><br><br>
+         <section class="content">
+             <h1>Table 1</h1>
+             <h2>&#127751; Victoria's Largest Cities by Population</h2>
+             <table class="table1" width="1090" cellpadding="5" cellspacing="4" border="5"
+                 style="width: 100%; text-align: center;">
+                 <!-- Table Heading -->
+                 <thead style="background-color: rgba(128, 128, 128, 0.362);">
+                     <tr>
+                         <th>No.</th>
+                         <th>City</th>
+                         <th>Year settled</th>
+                         <th>Population</th>
+                         <th>Distance from Melbourne</th>
+                     </tr>
+                 </thead>
+                 <!-- Table Body -->
+                 <tbody>
+                     <tr>
+                         <td>1.</td>
+                         <td>Melbourne</td>
+                         <td>1835</td>
+                         <td>4,917,750</td>
+                         <td>-</td>
+                     </tr>
+                     <tr>
+                         <td>2.</td>
+                         <td>Geelong</td>
+                         <td>1836</td>
+                         <td>214,618</td>
+                         <td>75 kilometres</td>
+                     </tr>
+                     <tr>
+                         <td>3.</td>
+                         <td>Ballarat</td>
+                         <td>1838</td>
+                         <td>111,973</td>
+                         <td>113 kilometres</td>
+                     </tr>
+                     <tr>
+                         <td>4.</td>
+                         <td>Bendigo</td>
+                         <td>1851</td>
+                         <td>103,034</td>
+                         <td>148 kilometres</td>
+                     </tr>
+                     <tr>
+                         <td>5.</td>
+                         <td>Mildura</td>
+                         <td>1887</td>
+                         <td>53,758</td>
+                         <td>541 kilometres</td>
+                     </tr>
+                     <tr>
+                         <td>6.</td>
+                         <td>Shepparton</td>
+                         <td>1855</td>
+                         <td>53,565</td>
+                         <td>176 kilometres</td>
+                     </tr>
+                     <tr>
+                         <td>7.</td>
+                         <td>Wodonga</td>
+                         <td>1852</td>
+                         <td>37,393</td>
+                         <td>299 kilometres</td>
+                     </tr>
+                     <tr>
+                         <td>8.</td>
+                         <td>Warrnambool</td>
+                         <td>1844</td>
+                         <td>33,302</td>
+                         <td>263 kilometres</td>
+                     </tr>
+                     <tr>
+                         <td>9.</td>
+                         <td>Traralgon</td>
+                         <td>1844</td>
+                         <td>29,247</td>
+                         <td>157 kilometres</td>
+                     </tr>
+                     <tr>
+                         <td>10.</td>
+                         <td>Torquay</td>
+                         <td>1866</td>
+                         <td>22,685</td>
+                         <td>97 kilometres</td>
+                     </tr>
+                 </tbody>
+                 <!-- Table Footer -->
+                 <tfoot>
+                     <tr>
+                         <td colspan="5">Data gathered from: <a
+                                 href="https://www.travelvictoria.com.au/victoria/population/" target="_blank">Travel
+                                 Victoria</a></td>
+                     </tr>
+                 </tfoot>
+             </table>
+ 
+         </section>
+         <!-- End  of 3/Table 1 Exercise -->
+         <!-- ------------------------------------------------------------------------------------------------ -->
+         <!-- Start of 4/Carousel Exercise -->
+         <a id="carou"></a>
+         <br><br><br>
+         <section class="content">
+             <h1>Carousel</h1>
+             <p>The carousel is a slideshow for cycling through a series of content, built with CSS 3D transforms and a
+                 bit of
+                 JavaScript. It works with a series of images, text, or custom markup. It also includes support for
+                 previous/next
+                 controls and indicators.</p>
+             <h2>&#128674; Top 10 World's Best Places to Visit</h2>
+             <br>
+             <div class="row">
+                 <div class="col"></div>
+                 <div class="col-12">
+                     <div id="demo" class="carousel slide" data-ride="carousel">
+                         <!-- Indicators -->
+                         <ul class="carousel-indicators">
+                             <li data-target="#demo" data-slide-to="0" class="active"></li>
+                             <li data-target="#demo" data-slide-to="1"></li>
+                             <li data-target="#demo" data-slide-to="2"></li>
+                             <li data-target="#demo" data-slide-to="3"></li>
+                             <li data-target="#demo" data-slide-to="4"></li>
+                             <li data-target="#demo" data-slide-to="5"></li>
+                             <li data-target="#demo" data-slide-to="6"></li>
+                             <li data-target="#demo" data-slide-to="7"></li>
+                             <li data-target="#demo" data-slide-to="8"></li>
+                             <li data-target="#demo" data-slide-to="9"></li>
+                         </ul>
+                         <!-- The Slideshow -->
+                         <div class="carousel-inner">
+                             <div class="carousel-item active">
+                                 <img id="changeheight" src="images/1newzealand.jpg" alt="New Zealand"
+                                     class="img-thumbnail">
+                                 <div class="carousel-caption">
+                                     <h3 class="text-caption">New Zealand</h3>
+                                     <p class="text-caption">Top 1</p>
+                                 </div>
+                             </div>
+                             <div class="carousel-item">
+                                 <img id="changeheight" src="images/2Paris.jpg" alt="Paris" class="img-thumbnail">
+                                 <div class="carousel-caption">
+                                     <h3 class="text-caption">Paris</h3>
+                                     <p class="text-caption">Top 2</p>
+                                 </div>
+                             </div>
+                             <div class="carousel-item">
+                                 <img id="changeheight" src="images/3Maui.jpg" alt="Maui" class="img-thumbnail">
+                                 <div class="carousel-caption">
+                                     <h3 class="text-caption">Maui</h3>
+                                     <p class="text-caption">Top 3</p>
+                                 </div>
+                             </div>
+                             <div class="carousel-item">
+                                 <img id="changeheight" src="images/4borabora.jpg" alt="Bora Bora" class="img-thumbnail">
+                                 <div class="carousel-caption">
+                                     <h3 class="text-caption">Bora Bora</h3>
+                                     <p class="text-caption">Top 4</p>
+                                 </div>
+                             </div>
+                             <div class="carousel-item">
+                                 <img id="changeheight" src="images/5tahiti.jpg" alt="Tahiti" class="img-thumbnail">
+                                 <div class="carousel-caption">
+                                     <h3 class="text-caption">Tahiti</h3>
+                                     <p class="text-caption">Top 5</p>
+                                 </div>
+                             </div>
+                             <div class="carousel-item">
+                                 <img id="changeheight" src="images/6london.jpg" alt="London" class="img-thumbnail">
+                                 <div class="carousel-caption">
+                                     <h3 class="text-caption">London</h3>
+                                     <p class="text-caption">Top 6</p>
+                                 </div>
+                             </div>
+                             <div class="carousel-item">
+                                 <img id="changeheight" src="images/7rome.jpg" alt="Rome" class="img-thumbnail">
+                                 <div class="carousel-caption">
+                                     <h3 class="text-caption">Rome</h3>
+                                     <p class="text-caption">Top 7</p>
+                                 </div>
+                             </div>
+                             <div class="carousel-item">
+                                 <img id="changeheight" src="images/8caicos.jpg" alt="Turks & Caicos"
+                                     class="img-thumbnail">
+                                 <div class="carousel-caption">
+                                     <h3 class="text-caption">Turks & Caicos</h3>
+                                     <p class="text-caption">Top 8</p>
+                                 </div>
+                             </div>
+                             <div class="carousel-item">
+                                 <img id="changeheight" src="images/9tokyo.jpg" alt="Tokyo" class="img-thumbnail">
+                                 <div class="carousel-caption">
+                                     <h3 class="text-caption">Tokyo</h3>
+                                     <p class="text-caption">Top 9</p>
+                                 </div>
+                             </div>
+                             <div class="carousel-item">
+                                 <img id="changeheight" src="images/10maldives.jpg" alt="Maldives" class="img-thumbnail">
+                                 <div class="carousel-caption">
+                                     <h3 class="text-caption">Maldives</h3>
+                                     <p class="text-caption">Top 10</p>
+                                 </div>
+                             </div>
+                         </div>
+                         <!-- Reference -->
+                         <p style="text-align: center;">Reference from: <a
+                                 href="https://travel.usnews.com/rankings/worlds-best-vacations/" target="_blank">Travel
+                                 U.S News</a></p>
+                         <br><br><br>
+                         <!-- Left and Right Controls -->
+                         <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                             <span class="carousel-control-prev-icon"></span>
+                         </a>
+                         <a class="carousel-control-next" href="#demo" data-slide="next">
+                             <span class="carousel-control-next-icon"></span>
+                         </a>
+                     </div>
+                 </div>
+ 
+                 <div>
+                     <div class="col"></div>
+                 </div>
+         </section>
+         <!-- End  of 4/Carousel Exercise -->
+         <!-- ------------------------------------------------------------------------------------------------ -->
+         <!-- Start of 5/Table 2 Exercise -->
+         <a id="tb2"></a>
+         <br><br><br>
+         <h1>Table 2 (Hoverable Dark table)</h1>
+         <p>The .table-hover class adds a hover effect (grey background color) on table rows. This table exercise shows
+             the
+             class of (VIT1101) Web Development and CMS 2022 in Semester 2 Block 4 at <strong>&#9674; Victoria
+                 University</strong>:</p>
+         <table class="table table-dark table-hover" style="border: black solid 3px;">
+             <!-- Table Heading -->
+             <thead>
+                 <tr>
+                     <th>Position</th>
+                     <th>First Name</th>
+                     <th>Last Name</th>
+                     <th>Email</th>
+                 </tr>
+             </thead>
+             <!-- Table Body -->
+             <tbody>
+                 <tr>
+                     <td>Teacher</td>
+                     <td>Nick</td>
+                     <td>Cypreou</td>
+                     <td>nickolas.cypreou@live.vu.edu.au</td>
+                 </tr>
+                 <tr>
+                     <td>Student</td>
+                     <td>Johanne Christiana</td>
+                     <td>Menez</td>
+                     <td>johanne.menez@live.vu.edu.au</td>
+                 </tr>
+                 <tr>
+                     <td>Student</td>
+                     <td>Lujin</td>
+                     <td>Alghamdi</td>
+                     <td>lujin.alghamdi@live.vu.edu.au</td>
+                 </tr>
+                 <tr>
+                     <td>Student</td>
+                     <td>Aurelio Hevi</td>
+                     <td>Alfons</td>
+                     <td>aurelio.hevialfons@live.vu.edu.au</td>
+                 </tr>
+                 <tr>
+                     <td>Student</td>
+                     <td>Napatrapee</td>
+                     <td>Sudjai</td>
+                     <td>napatrapee.sudjai@live.vu.edu.au</td>
+                 </tr>
+                 <tr>
+                     <td>Student</td>
+                     <td>Andy</td>
+                     <td>Chen</td>
+                     <td>andy.chen@live.vu.edu.au</td>
+                 </tr>
+             </tbody>
+         </table>
+         <!-- End of 5/Table 2 Exercise -->
+         <!-- ------------------------------------------------------------------------------------------------ -->
+         <!-- Start of 6/Jumbotron Exercise -->
+         <a id="jumbo"></a>
+         <br><br><br>
+         <h1>Jumbotron</h1>
+         <p>A <strong>Jumbotron</strong> indicates a big box for calling extra attention to some special content or
+             information. A jumbotron is displayed as a grey box with rounded corners. It also enlarges the font sizes of
+             the text inside it.</p>
+         <!-- Jumbotron 1 no image | Social Media -->
+         <div class="jumbotron" id="jumbo-bg">
+             <h1 style="color: white;">Social Media</h1>
+             <p style="color: white"><strong>Social media</strong> are interactive media technologies that facilitate the
+                 creation and sharing
+                 of information, ideas, interests, and other forms of expression through virtual communities and
+                 networks.</p>
+         </div>
+         <table cellpadding="10" class="text-center" style="width: 100%;">
+             <tr>
+                 <td>
+                     <!-- Jumbotron 2 with image | Instagram-->
+                     <div class="jumbotron" id="jumbo-bg">
+                         <h1 style="color: white;">Instagram</h1>
+                         <img class="jumbo-image" src="images/insta.png" alt="insta">
+                         <p style="color: white"><strong>Instagram</strong> is a photo and video sharing social
+                             networking service that
+                             allows users to upload media with filters and organized by hashtags.</p>
+                         <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+                     </div>
+                 </td>
+                 <td>
+                     <!-- Jumbotron 3 with image | Twitter-->
+                     <div class="jumbotron" id="jumbo-bg">
+                         <h1 style="color: white;">Twitter</h1>
+                         <img class="jumbo-image" src="images/twit.png" alt="twit">
+                         <p style="color: white"><strong>Twitter</strong> is a social media site, and its primary purpose
+                             is to connect
+                             people and allow people to share their thoughts with a big audience.</p>
+                         <a href="https://www.twitter.com/" target="_blank">Twitter</a>
+                     </div>
+                 </td>
+                 <td>
+                     <!-- Jumbotron 4 with image | Discord-->
+                     <div class="jumbotron" id="jumbo-bg">
+                         <h1 style="color: white;">Discord</h1>
+                         <img class="jumbo-image" src="images/disc.png" alt="disc">
+                         <p style="color: white"><strong>Discord</strong> is the easiest way to talk over voice, video,
+                             and text. Talk,
+                             chat, hang out, and stay close with your friends and communities.</p>
+                         <a href="https://www.discord.com/" target="_blank">Discord</a>
+                     </div>
+                 </td>
+             </tr>
+         </table>
+         <!-- End of 6/Jumbotron Exercise -->
+         <!-- ------------------------------------------------------------------------------------------------ -->
+         <!-- Start of 7/Collapsible Exercise -->
+         <a id="collapsible"></a>
+         <br><br><br>
+         <h1>Collapsible</h1>
+         <p>Click on the button to toggle between showing and hiding content. This data is collected from the author's
+             list
+             of things she loves.
+         </p>
+         <!-- Favorite Songs -->
+         <button id="button" data-toggle="collapse" data-target="#demo1">Favorite Songs</button>
+         <div id="demo1" class="collapse">
+             <p>
+             <ul id="collap_content" style="line-height: 1.7;">
+                 <li>Never Gonna Give You Up - Rick Astley</li>
+                 <audio controls>
+                     <source src="audio_videos/rickroll.mp3" type="audio/mpeg">
+                     Your browser does not support the audio element.
+                 </audio>
+                 <li>Feels Like You - Faime</li>
+                 <audio controls>
+                     <source src="audio_videos/feels.mp3" type="audio/mpeg">
+                     Your browser does not support the audio element.
+                 </audio>
+                 <li>Pink Cheeks - Eldon</li>
+                 <audio controls>
+                     <source src="audio_videos/pink_cheeks.mp3" type="audio/mpeg">
+                     Your browser does not support the audio element.
+                 </audio>
+                 <li>THE SHADE - Rex Orange County</li>
+                 <audio controls>
+                     <source src="audio_videos/shade.mp3" type="audio/mpeg">
+                     Your browser does not support the audio element.
+                 </audio>
+                 <li>Could Have Been Stardust - Sam Shore, Matt Bloyd</li>
+                 <audio controls>
+                     <source src="audio_videos/star.mp3" type="audio/mpeg">
+                     Your browser does not support the audio element.
+                 </audio>
+             </ul>
+             </p>
+         </div>
+         <br><br>
+         <!-- Love to do -->
+         <button id="button" data-toggle="collapse" data-target="#demo2">Love to do</button>
+         <div id="demo2" class="collapse">
+             <p>
+             <ul id="collap_content" style="line-height: 1.7;">
+                 <li>Spending time with family and friends</li>
+                 <!-- Playing Games -->
+                 <li><button id="button2" data-toggle="collapse" data-target="#demo3">Playing Games</button>
+                     <div id="demo3" class="collapse">
+                         <p>
+                         <ul>
+                             <li>Apex Legends</li>
+                             <li>Overwatch 2</li>
+                             <li>Rainbow Six Siege</li>
+                             <li>CSGO</li>
+                             <li>Valorant</li>
+                             <li>Genshin Impact</li>
+                             <li>Ensemble Stars</li>
+                         </ul>
+                         </p>
+                 </li>
+                 <!-- Reading Books -->
+                 <li><button id="button2" data-toggle="collapse" data-target="#demo4">Reading Books</button>
+                     <div id="demo4" class="collapse">
+                         <p>
+                         <ul>
+                             <li>The Holy Bible</li>
+                             <li>The Selection Series by Kiera Cass</li>
+                             <li>The Spanish Love Deception by Elena Armas</li>
+                             <li>The Love Hypothesis by Ali Hazelwood</li>
+                             <li>The Silent Patient by Alex Michaelides</li>
+                             <li>Ash Princess Series by Laura Sebastian</li>
+                             <li>Sky in the Deep by Adrienne Young</li>
+                         </ul>
+                         </p>
+                 </li>
+                 <li>Cooking and Baking</li>
+                 <li>Watching YouTube/Netflix</li>
+                 <li>Playing the guitar</li>
+             </ul>
+             </p>
+         </div>
+         <br><br>
+         <!-- Favorite Verses -->
+         <button id="button" data-toggle="collapse" data-target="#demo5">Favorite Verses</button>
+         <div id="demo5" class="collapse">
+             <table cellpadding="15">
+                 <tr>
+                     <td><img src="gif/v.gif" alt="verse1"></td>
+                     <td><img src="gif/v1.gif" alt="verse2"></td>
+                     <td><img src="gif/v2.gif" alt="verse3"></td>
+                 </tr>
+             </table>
+         </div>
+         <!-- End of 7/Collapsible Exercise -->
+         <!-- ------------------------------------------------------------------------------------------------ -->
+         <!-- Start of 8/Card Exercise -->
+         <a id="card"></a>
+         <br><br><br>
+         <h1>Card</h1>
+         <p>A <strong>Card</strong> is a flexible and extensible content container. It includes options for headers and
+             footers, a wide
+             variety of content, contextual background colors, and powerful display options.</p>
+         <h2>&#129368; Delicious Food</h2>
+         <br>
+         <div class="card-deck">
+             <!-- Card 1 | Pasta -->
+             <div class="card" style="background-color: rgba(255, 60, 60, 0.282);">
+                 <div class="card-body text-center">
+                     <img src="images/pasta.jpg" alt="pasta" style="border: black solid 1px;">
+                     <p class="card-text" style="color: rgb(75, 20, 20);"><strong>Pasta</strong></p>
+                     <p class="card-text">Is a type of food typically made from an unleavened dough of wheat flour mixed
+                         with water
+                         or
+                         eggs, and formed into sheets or other shapes, then cooked by boiling or baking.</p>
+                     <p class="card-text"><em>Author's note: Fettuccine Alfredo is the best one.</em></p>
+                 </div>
+             </div>
+             <!-- Card 2 | Corn Cheese -->
+             <div class="card" style="background-color: rgba(255, 198, 93, 0.282);">
+                 <div class="card-body text-center">
+                     <img src="images/corn.jpg" alt="corn-cheese" style="border: black solid 1px;">
+                     <p class="card-text" style="color: rgb(78, 65, 23);"><strong>Corn Cheese</strong></p>
+                     <p class="card-text">Corn cheese is a Korean dish made of sweet corn and mozzarella cheese.</p>
+                     <p class="card-text">The simplicity of the ingredients — canned corn, mayonnaise and mild shredded
+                         cheese</p>
+                     <p class="card-text"><em>Author's note: Corn Cheese is the first dish I tried in Australia.</em></p>
+                 </div>
+             </div>
+             <!-- Card 3 | Sinigang -->
+             <div class="card" style="background-color: rgba(93, 255, 109, 0.282);">
+                 <div class="card-body text-center">
+                     <img src="images/sin.jpg" alt="sinigang" style="border: black solid 1px;">
+                     <p class="card-text" style="color: rgb(24, 78, 24)"><strong>Sinigang</strong></p>
+                     <p class="card-text">Sinigang is a Filipino soup or stew characterized by its sour and savory taste.
+                         It is
+                         most often associated with tamarind, although it can use other sour fruits and leaves as the
+                         souring agent.
+                     </p>
+                     <p class="card-text"><em>Author's note: As a filipino I love this so much.</em></p>
+                 </div>
+             </div>
+             <!-- Card 4 | Brownies -->
+             <div class="card" style="background-color: rgba(93, 112, 255, 0.282);">
+                 <div class="card-body text-center">
+                     <img src="images/brownie.jpg" alt="brownie" style="border: black solid 1px;">
+                     <p class="card-text" style="color: rgb(39, 39, 73);"><strong>Brownies</strong></p>
+                     <p class="card-text">A chocolate brownie or simply a brownie is a chocolate baked confection.
+                         Brownies come in
+                         a variety of forms and may be either fudgy or cakey, depending on their density.</p>
+                     <p class="card-text"><em>Author's note: Absolutely Yummy. If you can create delicious brownies,
+                             please marry me.</em>
+                     </p>
+                 </div>
+             </div>
+         </div>
+         <!-- End of 8/Card Exercise -->
+         <!-- ------------------------------------------------------------------------------------------------ -->
+         <!-- Start of More Exercises -->
+ 
+         <!-- Start of 9/Modal and Image Shape Exercise -->
+         <a id="modal-shape"></a>
+         <br><br><br>
+         <h1>Modal & Image Shape</h1>
+         <p>A <strong>Modal</strong> is a dialog that appears on top of the main content and moves the system into a
+             special mode
+             requiring user interaction. This dialog disables the main content until the user explicitly interacts with
+             the
+             modal dialog.
+         </p>
+         <p>An <strong>Image Shape</strong>, from the word itself changes the shape of an image using HTML.</p>
+         <div class="container">
+             <!-- Modal 1 | CIRCLE -->
+             <!-- Button to Open the Modal -->
+             <button id="button" type="button" class="btn" data-toggle="modal" data-target="#myModal">Circle</button>
+ 
+             <!-- The Modal -->
+             <div class="modal" id="myModal">
+                 <div class="modal-dialog">
+                     <div class="modal-content">
+                         <!-- Modal Header -->
+                         <div class="modal-header">
+                             <h4 class="modal-title">Image Shape-Circle</h4>
+                             <button type="button" class="close" data-dismiss="modal">&times;</button>
+                         </div>
+                         <!-- Modal Body -->
+                         <div class="modal-body">
+                             <h2>&#10004; Circle</h2>
+                             <p>.rounded-circle class</p>
+                             <img id="media" class="rounded-circle" src="gif/thank-you.gif" alt="circle">
+                             <br>
+                         </div>
+                         <!-- Modal Footer -->
+                         <div class="modal-footer">
+                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <br>
+             <!-- Modal 2 | ROUNDED -->
+             <!-- Button to Open the Modal -->
+             <button id="button" type="button" class="btn" data-toggle="modal" data-target="#myModal2">Rounded</button>
+ 
+             <!-- The Modal -->
+             <div class="modal" id="myModal2">
+                 <div class="modal-dialog">
+                     <div class="modal-content">
+                         <!-- Modal Header -->
+                         <div class="modal-header">
+                             <h4 class="modal-title">Image Shape-Rounded</h4>
+                             <button type="button" class="close" data-dismiss="modal">&times;</button>
+                         </div>
+                         <!-- Modal Body -->
+                         <div class="modal-body">
+                             <h2>&#10004; Rounded</h2>
+                             <p>.rounded class</p>
+ 
+                             <img id="media" class="rounded" src="gif/thank-you.gif" alt="rounded">
+                             <br>
+                         </div>
+                         <!-- Modal Footer -->
+                         <div class="modal-footer">
+                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <br>
+             <!-- Modal 3 | THUMBNAIL -->
+             <!-- Button to Open the Modal -->
+             <button id="button" type="button" class="btn" data-toggle="modal" data-target="#myModal3">Thumbnail</button>
+ 
+             <!-- The Modal -->
+             <div class="modal" id="myModal3">
+                 <div class="modal-dialog">
+                     <div class="modal-content">
+                         <!-- Modal Header -->
+                         <div class="modal-header">
+                             <h4 class="modal-title">Image Shape-Thumbnail</h4>
+                             <button type="button" class="close" data-dismiss="modal">&times;</button>
+                         </div>
+                         <!-- Modal Body -->
+                         <div class="modal-body">
+                             <h2>&#10004; Thumbnail</h2>
+                             <p>.img-thumbnail class</p>
+ 
+                             <img class="img-thumbnail" src="gif/thank-you.gif" alt="thumbnail">
+                         </div>
+                         <!-- Modal Footer -->
+                         <div class="modal-footer">
+                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <!-- End of 9/Modal and Image Shape Exercise -->
+         <!-- ------------------------------------------------------------------------------------------------ -->
+         <!-- Start of 10/Videos Exercise -->
+         <a id="vid"></a>
+         <br><br><br>
+         <h1>Adding Videos</h1>
+         <h2>&#128187; Programming Memes</h2>
+         <p>Time to relax and watch some programming memes! All content is from the channel <strong>Meme Man</strong> on
+             YouTube, link
+             below.</p>
+         <div class="container">
+             <table cellpadding="6" style="width: 100%; text-align: center;">
+                 <!-- ROW 1 -->
+                 <tr>
+                     <td>
+                         <video id="video_size" controls>
+                             <source src="audio_videos/vid1.mp4" type="video/mp4">
+                             Your browser does not support the video tag.
+                         </video>
+                     </td>
+                     <td>
+                         <video id="video_size" controls>
+                             <source src="audio_videos/vid2.mp4" type="video/mp4">
+                             Your browser does not support the video tag.
+                         </video>
+                     </td>
+                     <td>
+                         <video id="video_size" controls>
+                             <source src="audio_videos/vid3.mp4" type="video/mp4">
+                             Your browser does not support the video tag.
+                         </video>
+                     </td>
+                 </tr>
+                 <!-- ROW 2 -->
+                 <tr>
+                     <td>
+                         <video id="video_size" controls>
+                             <source src="audio_videos/vid4.mp4" type="video/mp4">
+                             Your browser does not support the video tag.
+                         </video>
+                     </td>
+                     <td>
+                         <video id="video_size" controls>
+                             <source src="audio_videos/vid5.mp4" type="video/mp4">
+                             Your browser does not support the video tag.
+                         </video>
+                     </td>
+                     <td>
+                         <video id="video_size" controls>
+                             <source src="audio_videos/vid6.mp4" type="video/mp4">
+                             Your browser does not support the video tag.
+                         </video>
+                     </td>
+                 </tr>
+                 <tr>
+                     <!-- Reference -->
+                     <td colspan="3">Source from: <a href="https://www.youtube.com/watch?v=88IKVOpJ8II"
+                             target="_blank">Meme Man</a>
+                     </td>
+                 </tr>
+             </table>
+         </div>
+         <!-- End of 10/Videos Exercise -->
+         <!-- ------------------------------------------------------------------------------------------------ -->
+         <!-- Start of 11/ToolTip Exercise -->
+         <a id="tool"></a>
+         <br><br><br>
+         <h1>ToolTip</h1>
+         <div class="container">
+             <h2>&#128233; Message to you</h2>
+             <p>Hover which emotion you are feeling at the moment, for a special message!</p>
+             <br>
+             <table class="table table-bordered table-hover container"
+                 style="background-image: url(images/bg3.jpg); width: 100%; text-align: center;">
+                 <thead>
+                     <tr>
+                         <th colspan="3" style="color: white;">Types of Emotions</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <td align="center"><button class="btn btn-primary btn-md">&#129321; Excited</button></td>
+                         <td align="center"><button class="btn btn-info btn-md">&#128522; Happy</button></td>
+                         <td align="center"><button class="btn btn-success btn-md">&#128564; Bored</button></td>
+                     </tr>
+                     <tr>
+                         <td align="center"><button class="btn btn-light btn-md">&#128561; Scared</button></td>
+                         <td align="center"><button class="btn btn-secondary btn-md">&#128557; Sad</button></td>
+                         <td align="center"><button class="btn btn-dark btn-md">&#128545; Angry</button></td>
+                     </tr>
+                 </tbody>
+             </table>
+         </div><br><br><br>
+         <!-- End of 11/ToolTip Exercise -->
+         <!-- ------------------------------------------------------------------------------------------------ -->
+         <!-- Start of 12/Popover Exercise -->
+         <a id="pop"></a>
+         <br><br><br>
+         <div class="container">
+             <h1>Pop Over</h1>
+             <p>Kindly press the button in which date you were born to know your zodiac sign! If you wish to exit the
+                 button, press it again.</p>
+             <table cellpadding="6" cellspacing="4" style="text-align: left; table-layout: fixed;">
+                 <!-- ROW 1 -->
+                 <tr>
+                     <td> <button class="capricorn">&#9809; December 22 - January 19</button></td>
+                     <td> <button class="aquarius">&#9810; January 20 - February 18</button></td>
+                     <td> <button class="pisces">&#9811; February 19 - March 20</button></td>
+                     <td> <button class="aries">&#9800; March 21 - April 19</button></td>
+                 </tr>
+                 <!-- ROW 2 -->
+                 <tr>
+                     <td> <button class="taurus">&#9801; April 20 - May 20</button></td>
+                     <td> <button class="gemini">&#9802; May 21 - June 20</button></td>
+                     <td> <button class="cancer">&#9803; June 21 - July 22</button></td>
+                     <td> <button class="leo">&#9804; July 23 - August 22</button></td>
+                 </tr>
+                 <!-- ROW 3 -->
+                 <tr>
+                     <td> <button class="virgo">&#9805; August 23 - September 22</button></td>
+                     <td> <button class="libra">&#9806; September 23 - October 23</button></td>
+                     <td> <button class="scorpio">&#9807; October 24 - November 21</button></td>
+                     <td> <button class="sagittarius">&#9808; November 22 - December 21</button></td>
+                 </tr>
+             </table>
+         </div><br><br><br>
+         <!-- End of 12/Popover Exercise -->
+         <!-- ------------------------------------------------------------------------------------------------ -->
+         <!-- Start of 13/Media Object Exercise -->
+         <a id="media-obj"></a>
+         <br><br><br>
+         <h1>Media Object</h1>
+         <p><strong>Media Objects</strong> are often used to display blog comments, tweets and so on:</p>
+         <h2>&#128150; Me and my siblings</h2>
+ 
+         <!-- Media Object 1 | Middle -->
+         <div class="container mt-3">
+             <div class="media border p-2">
+                 <!-- Picture -->
+                 <div style="background-image: url(images/bg3.jpg); padding: 20px;">
+                     <img id="media_object" src="images/pfp2.png" alt="pfp"
+                         class="mr-2 mt-3 rounded-circle width: 60px;">
+                     <div class="media-body">
+                         <!-- Header -->
+                         <h4 style="color: rgb(255, 255, 255);">Johanne Christiana Menez<small><i
+                                     style="color: rgba(255, 255, 255, 0.799);"> Posted on November 17,
+                                     2022</i></small></h4>
+                         <!-- Body -->
+                         <p style="color: rgb(255, 255, 255); text-align: justify;">Currently, I am studying in Australia
+                             at Victoria University with the course; Diploma of Information Technology. I love the
+                             variety of topics I am currently learning and since I have a lot of free time I dedicate my
+                             time to do self-learning on LinkedIn, YouTube and other websites. I am seeking work
+                             experience related to the IT field or Research to be able to learn and grow. &#127803;
+                             <br><br><q>Do your best and God will do the rest</q> -The Middle Child
+                         </p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <!-- Media Object 2 | Eldest -->
+         <div class="container mt-3">
+             <div class="media border p-2">
+                 <!-- Picture -->
+                 <div style="background-image: url(images/bg3.jpg); padding: 20px;">
+                     <img id="media_object" src="images/pfp1.png" alt="pfp"
+                         class="mr-2 mt-3 rounded-circle width: 60px;">
+                     <div class="media-body">
+                         <!-- Header -->
+                         <h4 style="color: rgb(255, 255, 255);">Johyra Hynz Menez<small><i
+                                     style="color: rgba(255, 255, 255, 0.799);"> Posted on November 18,
+                                     2022</i></small></h4>
+                         <!-- Body -->
+                         <p style="color: rgb(255, 255, 255); text-align: justify;">Good day to the lovely people reading
+                             this, I am currently studying Medicine and by prayers, faith and a miracle. I somehow am
+                             in my 4th year⚰⚰ I have a terrible addiciton to sweets and reading (CN KN novels, fanfic,
+                             manhwa, manga, webtoon,) because it is my coping mechanism to everything.
+                             <br><br><q>Prioritize your happiness. The problems you think of isn't really a problem at
+                                 all</q> -The Eldest Child
+                         </p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <!-- Media Object 3 | Youngest -->
+         <div class="container mt-3">
+             <div class="media border p-2">
+                 <!-- Picture -->
+                 <div style="background-image: url(images/bg3.jpg); padding: 20px;">
+                     <img id="media_object" src="images/pfp3.png" alt="pfp"
+                         class="mr-2 mt-3 rounded-circle width: 60px;">
+                     <div class="media-body">
+                         <!-- Header -->
+                         <h4 style="color: rgb(255, 255, 255);">Johnzen Menez<small><i
+                                     style="color: rgba(255, 255, 255, 0.799);"> Posted on November 19,
+                                     2022</i></small></h4>
+                         <!-- Body -->
+                         <p style="color: rgb(255, 255, 255); text-align: justify;">Hello, I'm the epic person of the
+                             family, I am currently living in Qatar but when I graduate I would like to go to Canada or
+                             Australia, my advise for you is to always love everyone and find the good in people no
+                             matter how bad they may be and forgive them.<br><br><q>Money</q> -The Youngest Child
+                         </p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <!-- End of 13/Media Object Exercise -->
+         <!-- ------------------------------------------------------------------------------------------------ -->
+         <!-- Quotes -->
+         <br> <br> <br> <br> <br>
+         <h2><q>When you give joy to other people, you get more joy in return. You should give a good thought to
+                 happiness that you can give out.</q></h2>— Eleanor Roosevelt
+         <br> <br> <br> <br>
+         <h2><q>The road to success and the road to failure are almost exactly the same.</q></h2>— Colin R. Davis
+         <br> <br> <br> <br>
+         <h2><q>If you are working on something that you really care about, you dont have to be pushed. The vision pulls
+                 you.</q></h2>— Steve Jobs
+         <br> <br> <br> <br> <br>
+         <!-- End of Quotes -->
+         <!-- ------------------------------------------------------------------------------------------------ -->
+     </div><!-- container -->
+ 
+     <!-- Footer -->
+     <a id="footer"></a>
+     <br><br><br>
+     <div id="footer_img" class="text-center" style="margin-bottom: 0; color: white; padding: 10px;">
+         <p>Bootsrap Portfolio | Johanne Christiana Menez | November 2022</p>
+     </div>
+     <!-- End of More Exercises -->
+ 
+     <!-- ------------------------------------------------------------------------------------------------ -->
+     <!-- SCRIPTS -->
+     <script src="js/jquery.slim.min.js"></script>
+     <script src="js/popper.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+ 
+     <!------ToolTip------>
+     <script>
+         $(document).ready(function () {
+             $('.btn-primary').tooltip({ title: "We live in exciting times indeed!", animation: false });
+             $('.btn-info').tooltip({ title: "Optimism is a happiness magnet. If you stay positive, good things and good people will be drawn to you. -Mary Lou Retton.", animation: false });
+             $('.btn-success').tooltip({ title: "Appreciating the little things in life means focusing on what brings us joy and happiness instead of those things that are boring/negative!", animation: false });
+             $('.btn-light').tooltip({ title: "Even though I don't understand what you're going through, know that you are not alone.", animation: false });
+             $('.btn-secondary').tooltip({ title: "You are so much stronger than you know.", animation: false });
+             $('.btn-dark').tooltip({ title: "Please take a moment before you say something you might regret.", animation: false });
+         });
+     </script>
+ 
+     <!------Pop Over------>
+     <script>
+         $(document).ready(function () {
+             $('.capricorn').popover({ title: "You are a Capricorn!", content: "Capricorns' are ambitious, determined, materialistic and strong. They will keep going when others would've given up ten miles back.", });
+         });
+         $(document).ready(function () {
+             $('.aquarius').popover({ title: "You are a Aquarius!", content: "People born under the Aquarius sign are said to be progressive, independent, intelligent, unique, and idealistic.", });
+         });
+         $(document).ready(function () {
+             $('.pisces').popover({ title: "You are a Pisces!", content: "Pisces are known for being emotionally sensitive, gracious, and emotionally aware. Pisces characters are regarded for being among the most sympathetic of the zodiac signs, and they will go to great lengths to ensure the happiness of those around them.", });
+         });
+         $(document).ready(function () {
+             $('.aries').popover({ title: "You are a Aries!", content: "Aries naturally take charge and are competitive and ambitious. Aries are spontaneous and courageous. They have a sense of adventure and love to explore.", });
+         });
+         $(document).ready(function () {
+             $('.taurus').popover({ title: "You are a Taurus!", content: "Taurus traits include being hard-headed, down-to-earth, tenacious, reliable, loyal, and sensual.", });
+         });
+         $(document).ready(function () {
+             $('.gemini').popover({ title: "You are a Gemini!", content: "Geminis are flexible, extroverted, and clever, and there's never a boring moment while they're around. They are the social butterflies of the zodiac.", });
+         });
+         $(document).ready(function () {
+             $('.cancer').popover({ title: "You are a Cancer!", content: "Cancer traits include being nurturing, sensitive, compassionate, self-protective, security-seeking and offering, loving, and displaying a goofy, ingratiating sense of humor.", });
+         });
+         $(document).ready(function () {
+             $('.leo').popover({ title: "You are a Leo!", content: "Leo traits include being confident, comfortable being the center of attention, drama-adoring, ambitious, loyal, fiercely protective of their nearest and dearest, generous, luxury-loving, sunny, and big-hearted.", });
+         });
+         $(document).ready(function () {
+             $('.virgo').popover({ title: "You are a Virgo!", content: "On the appearance, Virgos are humble, self-effacing, industrious, and practical, but under the surface, they are frequently natural, kind, and sympathetic.", });
+         });
+         $(document).ready(function () {
+             $('.libra').popover({ title: "You are a Libra!", content: "Libras are known for being charming, beautiful, and well-balanced. They thrive on making things orderly and aesthetically pleasing. They also crave balance, and they can be equally as self-indulgent as they are generous.", });
+         });
+         $(document).ready(function () {
+             $('.scorpio').popover({ title: "You are a Scorpio!", content: "Scorpios are famously discreet and even secretive, with an air of mystery around them. Other personality traits include fearlessness, boldness, passion, creativity, and fierce loyalty.", });
+         });
+         $(document).ready(function () {
+             $('.sagittarius').popover({ title: "You are a Sagittarius!", content: "Sagittarians are optimistic, lovers of freedom, hilarious, fair-minded, honest and intellectual.", });
+         });
+     </script>
+ 
+ </body>
+ 
+ </html>
