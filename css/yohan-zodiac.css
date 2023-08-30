@@ -1,0 +1,191 @@
+/* 
+
+Purpose: This is the CSS style for the additional exercise Popover; Zodiac Signs
+Author: Johanne Christiana Menez 
+Student ID: s4675880
+
+*/
+
+/* -------------------------------------------START------------------------------------------- */
+/* --------------------------CAPRICORN-------------------------- */
+.capricorn {
+    background-color: #eb3b5a;
+    color: white;
+    border: #000000 solid 2px;
+    border-radius: 2px;
+    padding: 4px;
+    font-size: large;
+    max-width: 150px;
+}
+
+.capricorn:hover {
+    background-color: white;
+    color: #cc324e;
+}
+/* --------------------------AQUARIUS-------------------------- */
+.aquarius {
+    background-color: #fa8231;
+    color: rgb(255, 255, 255);
+    border: #000000 solid 2px;
+    border-radius: 2px;
+    padding: 4px;
+    font-size: large;
+    max-width: 150px;
+}
+
+.aquarius:hover {
+    background-color: #ffffff;
+    color: #dd732c;
+}
+/* --------------------------PISCES-------------------------- */
+.pisces {
+    background-color: #f7b731;
+    color: rgb(255, 255, 255);
+    border: #000000 solid 2px;
+    border-radius: 2px;
+    padding: 4px;
+    font-size: large;
+    max-width: 150px;
+}
+
+.pisces:hover {
+    background-color: #ffffff;
+    color: #d7a029;
+}
+/* --------------------------ARIES-------------------------- */
+.aries {
+    background-color: #20bf6b;
+    color: rgb(255, 255, 255);
+    border: #000000 solid 2px;
+    border-radius: 2px;
+    padding: 4px;
+    font-size: large;
+    max-width: 150px;
+}
+
+.aries:hover {
+    background-color: #ffffff;
+    color: #1ba25a;
+}
+/* --------------------------TAURUS-------------------------- */
+.taurus {
+    background-color: #264653;
+    color: rgb(255, 255, 255);
+    border: #000000 solid 2px;
+    border-radius: 2px;
+    padding: 4px;
+    font-size: large;
+    max-width: 150px;
+}
+
+.taurus:hover {
+    background-color: #ffffff;
+    color: #1e3944;
+}
+/* --------------------------GEMINI-------------------------- */
+.gemini {
+    background-color: #58B19F;
+    color: rgb(255, 255, 255);
+    border: #000000 solid 2px;
+    border-radius: 2px;
+    padding: 4px;
+    font-size: large;
+    max-width: 150px;
+}
+
+.gemini:hover {
+    background-color: #ffffff;
+    color: #4d9a8b;
+}
+/* --------------------------CANCER-------------------------- */
+.cancer {
+    background-color: #0fb9b1;
+    color: rgb(255, 255, 255);
+    border: #000000 solid 2px;
+    border-radius: 2px;
+    padding: 4px;
+    font-size: large;
+    max-width: 150px;
+}
+
+.cancer:hover {
+    background-color: #ffffff;
+    color: #0d9c95;
+}
+/* --------------------------LEO-------------------------- */
+.leo {
+    background-color: #2d98da;
+    color: rgb(255, 255, 255);
+    border: #000000 solid 2px;
+    border-radius: 2px;
+    padding: 4px;
+    font-size: large;
+    max-width: 150px;
+}
+
+.leo:hover {
+    background-color: #ffffff;
+    color: #247fb8;
+}
+/* --------------------------VIRGO-------------------------- */
+.virgo {
+    background-color: #3867d6;
+    color: rgb(255, 255, 255);
+    border: #000000 solid 2px;
+    border-radius: 2px;
+    padding: 4px;
+    font-size: large;
+    max-width: 150px;
+}
+
+.virgo:hover {
+    background-color: #ffffff;
+    color: #305aba;
+}
+/* --------------------------LIBRA-------------------------- */
+.libra {
+    background-color: #3B3B98;
+    color: rgb(255, 255, 255);
+    border: #000000 solid 2px;
+    border-radius: 2px;
+    padding: 4px;
+    font-size: large;
+    max-width: 150px;
+}
+
+.libra:hover {
+    background-color: #ffffff;
+    color: #323280;
+}
+/* --------------------------SCORPIO-------------------------- */
+.scorpio {
+    background-color: #8854d0;
+    color: rgb(255, 255, 255);
+    border: #000000 solid 2px;
+    border-radius: 2px;
+    padding: 4px;
+    font-size: large;
+    max-width: 150px;
+}
+
+.scorpio:hover {
+    background-color: #ffffff;
+    color: #7246b0;
+}
+/* --------------------------SAGITTARIUS-------------------------- */
+.sagittarius {
+    background-color: #4b6584;
+    color: rgb(255, 255, 255);
+    border: #000000 solid 2px;
+    border-radius: 2px;
+    padding: 4px;
+    font-size: large;
+    max-width: 150px;
+}
+
+.sagittarius:hover {
+    background-color: white;
+    color: #4b6584;
+}
+
+/* -------------------------------------------END------------------------------------------- */
