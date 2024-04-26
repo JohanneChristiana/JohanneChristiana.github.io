@@ -16,7 +16,7 @@
 🌕 Card <br/>
 🌟 And other exercises: <br/>
 - Modal and Image Shape
-- Adding Videos
+- Adding Videos/Audios
 - ToolTip
 - Popover
 - Media Object
