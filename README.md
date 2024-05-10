@@ -1,5 +1,5 @@
 # 📄 JohanneChristiana.github.io
-
+Website using HTML/CSS
 ## Preview
 
 ![Web1](https://github.com/JohanneChristiana/JohanneChristiana.github.io/assets/113961547/abcf6f7a-59cb-4374-82c4-3f30f035ea9a)
